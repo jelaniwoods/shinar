@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :chat_users, dependent: :destroy
   has_many :chats, through: :chat_users, source: :chat
   has_many :messages, foreign_key: "author_id", dependent: :destroy
+  has_many :notification_tokens, dependent: :destroy
 
   after_create :update_name, if: -> { name.blank? }
 

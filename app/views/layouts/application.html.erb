@@ -9,6 +9,10 @@
     <meta name="turbo-refresh-method" content="morph">
     <meta name="turbo-refresh-scroll" content="preserve">
 
+    <% if user_signed_in? %>
+      <meta data-controller="bridge--notification-token">
+    <% end %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

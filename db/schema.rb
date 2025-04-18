@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_13_054737) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_18_190134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -43,6 +43,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_13_054737) do
     t.index ["chat_id"], name: "index_messages_on_chat_id"
   end
 
+  create_table "notification_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token", null: false
+    t.string "platform", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notification_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "pending", null: false
     t.datetime "created_at", null: false
@@ -54,4 +63,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_13_054737) do
   add_foreign_key "chats", "users", column: "creator_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users", column: "author_id"
+  add_foreign_key "notification_tokens", "users"
 end
