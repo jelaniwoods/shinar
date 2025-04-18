@@ -39,6 +39,8 @@ gem "carrierwave"                  # File uploads
 gem "cloudinary"                   # Cloud image storage
 gem "kaminari"                     # Pagination
 gem "groupdate"                    # Group data by time periods
+gem "noticed"                      # Push notifications
+gem "apnotic"                      # Communicate with APN for iOS push notifications
 
 # Development and testing utilities
 gem "awesome_print"                # Pretty print Ruby objects
@@ -47,7 +49,7 @@ gem "faker"                        # Generate fake data
 gem "htmlbeautifier"               # Format HTML
 gem "http"                         # HTTP client
 gem "table_print"                  # Format ActiveRecord for console
-gem "haikunator"
+gem "haikunator"             # Generate usernames
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
