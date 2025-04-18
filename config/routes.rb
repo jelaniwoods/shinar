@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :configurations, only: [] do
+    get :android_v1, on: :collection
+  end
+
   root to: "chats#index"
   resources :chat_users
   resources :chats, param: :token do
