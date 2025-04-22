@@ -13,7 +13,8 @@
 
   "portsAttributes": {
     "3000": {
-      "onAutoForward": "silent"
+      "onAutoForward": "silent",
+      "visibility": "public"
     },
     "4567": {
       "onAutoForward": "silent"
