@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :messages, foreign_key: "author_id", dependent: :destroy
   has_many :notification_tokens, dependent: :destroy
 
-  after_create :update_name, if: -> { name.blank? }
+  before_create :update_name, if: -> { name == "pending" }
 
   validates :name, presence: true
 

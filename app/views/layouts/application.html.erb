@@ -9,7 +9,7 @@
     <meta name="turbo-refresh-method" content="morph">
     <meta name="turbo-refresh-scroll" content="preserve">
 
-    <% if user_signed_in? %>
+    <% if cookies.signed[:user_id].present? %>
       <meta data-controller="bridge--notification-token">
     <% end %>
 

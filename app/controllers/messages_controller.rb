@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
     @message = @chat.messages.build(message_params)
     @message.author = current_user
     # TODO rename to NewMessageNotifier
-    NewLikeNotifier.with(chat: @chat).deliver(chat.creator)
+    NewLikeNotifier.with(chat: @chat).deliver(@chat.creator)
 
     respond_to do |format|
       if @message.save

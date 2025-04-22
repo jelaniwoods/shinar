@@ -41,6 +41,7 @@ gem "kaminari"                     # Pagination
 gem "groupdate"                    # Group data by time periods
 gem "noticed"                      # Push notifications
 gem "apnotic"                      # Communicate with APN for iOS push notifications
+gem "googleauth"               # Communicate with Google for Android push notifications
 
 # Development and testing utilities
 gem "awesome_print"                # Pretty print Ruby objects
