@@ -17,6 +17,9 @@ TurboPower.initialize(Turbo.StreamActions);
 // Custom Turbo Stream actions
 import "./custom/stimulus_invoker";
 
+// Add bridge component
+import "@hotwired/hotwire-native-bridge"
+
 // Add jQuery for legacy compatibility if needed
 import jquery from "jquery";
 window.jQuery = jquery;
