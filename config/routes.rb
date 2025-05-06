@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "privacy_policy" => "pages#privacy_policy", :as => :privacy_policy
+  get "terms_of_service" => "pages#terms_of_service", :as => :terms_of_service
+
   get "rake/db_seed"
   resources :configurations, only: [] do
     get :android_v1, on: :collection
