@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get "qr"
     end
   end
+
+  get "users/edit" => "users#edit"
+
   resources :users do
     member do
       delete :sign_out
