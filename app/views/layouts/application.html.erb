@@ -50,6 +50,8 @@
       </div>
     </div>
 
-    <%= render "shared/footer" %>
+    <% if request.path.include?(users_edit_path) %>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>
